@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Copy Image as Base64",
+  "version": "1.0",
+  "description": "Convert images to Base64 and copy to clipboard",
+  "permissions": ["contextMenus", "scripting", "activeTab", "clipboardWrite"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "host_permissions": ["<all_urls>"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_title": "Copy Image as Base64"
+  }
+}
